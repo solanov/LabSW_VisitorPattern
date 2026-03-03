@@ -1,20 +1,17 @@
-import java.util.HashMap;
-import java.util.Map;
-
 public class UnliCallTextPackage implements UnliCallTextOffer {
-
-private static Map<String, Boolean> unliCallTextMap = new HashMap<>();
-    
-    static{
-        unliCallTextMap.put("Smart", false);
-        unliCallTextMap.put("Globe", true);
-        unliCallTextMap.put("Ditto", true);
-    }
-
-
+  
     @Override
-    public String showUnliCallsTextOffer(String telcoName, boolean unliCallText){
-        return ""+(unliCallTextMap.get(telcoName));
+    public String showUnliCallsTextOffer(String telcoName, boolean unliCallText) {
+        if (telcoName.equals("Smart") && !unliCallText) {
+            return "No free calls and texts.";
+        } else if (telcoName.equals("Globe") && unliCallText) {
+            return "Free calls and texts to same network.";
+        } else if (telcoName.equals("Ditto") && unliCallText) {
+            return "Free calls and texts to all networks.";
+        } else {
+            return "Invalid Telco";
+        }
+
     }
     
 }

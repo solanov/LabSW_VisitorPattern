@@ -1,8 +1,8 @@
 public class TelcoPromo {
   public static void main(String[] args) {
-    Telco smart = new Telco(15, 500, "Smart",false);
-    Telco globe = new Telco(10, 450, "Globe",true);
-    Telco ditto = new Telco(8, 400, "Ditto",true);
+    Telco smart = new TelcoSubscription(15, 500, "Smart",false);
+    Telco globe = new TelcoSubscription(10, 450, "Globe",true);
+    Telco ditto = new TelcoSubscription(8, 400, "Ditto",true);
 
     UsagePromo promo = new TelcoAllowance();
     UnliCallTextOffer unli = new UnliCallTextPackage();    
